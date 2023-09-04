@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <title>The Astrology Interface</title>
+    <style>
+        /* Custom CSS based on your provided styles */
+
+        body {
+            font-family: "Montserrat";
+            background-color: white;
+            /* Windows 95 desktop background color */
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #ffffff;
+            /* Windows 95 card background color */
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            box-shadow: 5px 10px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: #fa5aba;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-family: 'Roboto', sans-serif;
+            color: #fa5aba;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            color: #000;
+            /* Label text color */
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form-control {
+            background-color: #fff;
+            color: #000000; /* Change the text color to white */
+            border: 1px solid #000000; /* Add a white solid border */
+            /* Input field background color */
+        }
+
+        /* Custom styling for User's Chart */
+        .user-chart {
+            background-color: #ffffff;
+            /* Chart background color */
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            /* Add the styles from .gfg1 here */
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 5px 10px;
+        }
+
+        .user-chart h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .user-chart p {
+            font-size: 16px;
+        }
+
+        /* Custom styling for commands list */
+        .commands-list {
+            background-color: #ffffff;
+            /* Commands list background color */
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .commands-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .commands-list ul li {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container" class="small-box">
+        <div class="user-chart">
+            <h1>The Astrology Interface</h1>
+            <p>Enter your information below to get your data back</p>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="user-chart">
+                    <form>
+                        <h4>User Data:</h4>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Birthdate</label>
+                            <input type="text" class="form-control" id="birthdate" placeholder="Birthdate">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthTime">Birth Time</label>
+                            <input type="text" class="form-control" id="birthTime" placeholder="Birth Time">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthPlace">Birth City/Country</label>
+                            <input type="text" class="form-control" id="birthPlace" placeholder="Birth City/Country">
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="user-chart" class="small-box">
+                    <h4>User's Chart</h4>
+                    <p>
+                        Sun: Leo<br>
+                        Moon: Cancer<br>
+                        Mars: Scorpio<br>
+                        Mercury: Virgo<br>
+                        Jupiter: Sagittarius<br>
+                        Venus: Libra<br>
+                        Saturn: Capricorn<br>
+                        Rahu: Capricorn<br>
+                        Ketu: Aquarius<br>
+                        Uranus: Aries<br>
+                        Neptune: Pisces<br>
+                        Pluto: Capricorn
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="commands-list" class="small-box">
+            <h4>Daily</h4>
+            <p>Today, embrace adventure, nurture bonds, and express yourself with clarity; it's a day for growth and positive change in all signs.</p>
+        </div>
+    </div>
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
+
+        function toggleDarkMode() {
+            if (isDarkModeEnabled) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkModeEnabled', 'false');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkModeEnabled', 'true');
+            }
+        }
+
+        if (isDarkModeEnabled) {
+            body.classList.add('dark-mode');
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYlT"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
