@@ -10,18 +10,20 @@ form.addEventListener("submit", function (event) {
     const latitude = document.getElementById("latitude").value;
     const longitude = document.getElementById("longitude").value;
 
+    const newUser = new User()
+
+    newUser.setUserData(firstName, lastName, birthdate, birthTime, latitude,longitude)
+
+
     let element = document.getElementById("output");
     
-    
-
-
     let userInfo = `User Info Is:<br>
-    First Name: ${firstName}<br>
-    Last Name: ${lastName}<br>
-    Birthdate: ${birthdate}<br>
-    Birth Time: ${birthTime}<br>
-    Latitude: ${latitude}<br>
-    Longitude: ${longitude}`;
+    First Name: ${newUser.firstName}<br>
+    Last Name: ${newUser.lastName}<br>
+    Birthdate: ${newUser.birthdate}<br>
+    Birth Time: ${newUser.birthTime}<br>
+    Latitude: ${newUser.latitude}<br>
+    Longitude: ${newUser.longitude}`;
     
     // Set the "output" element's text content
     element.innerHTML = userInfo;
