@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,27 +24,27 @@
         <div class="row">
             <div class="col-sm">
                 <div class="user-chart">
-                    <form>
+                    <form id="userForm">
                         <h4>User Data:</h4>
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name" value="Jason">
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="Block">
                         </div>
                         <div class="form-group">
                             <label for="birthdate">Birthdate</label>
-                            <input type="text" class="form-control" id="birthdate" placeholder="Birthdate">
+                            <input type="date" class="form-control" id="birthdate" >
                         </div>
                         <div class="form-group">
                             <label for="birthTime">Birth Time</label>
-                            <input type="text" class="form-control" id="birthTime" placeholder="Birth Time">
+                            <input type="time" class="form-control" id="birthTime" placeholder="Birth Time" value="then">
                         </div>
                         <div class="form-group">
                             <label for="birthPlace">Birth City/Country</label>
-                            <input type="text" class="form-control" id="birthPlace" placeholder="Birth City/Country">
+                            <input type="text" class="form-control" id="birthPlace" placeholder="Birth City/Country" value="Salt Lake City">
                         </div>
                         <button type="submit" class="btn btn-outline-dark">Submit</button>
                     </form>
@@ -71,12 +70,11 @@
                 </div>
             </div>
         </div>
-        <div class="commands-list" class="small-box">
-            <h4>Daily</h4>
-            <p>Today, embrace adventure, nurture bonds, and express yourself with clarity; it's a day for growth and
-                positive change in all signs.</p>
+        <div class="commands-list" class="small-box" id="output">
+            
         </div>
     </div>
+    <script src="scripts.js"></script>
 
 
 </body>
