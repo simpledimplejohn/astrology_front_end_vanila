@@ -1,2 +1,2 @@
-# Kitten Database Repo
-Testing the kitten database example in mongodb with mongoose
+# Astrology Front End Vanila
+This is a basic html setup for the Astrology Interface website that will later be turned into react.
