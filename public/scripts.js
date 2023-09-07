@@ -15,7 +15,7 @@ form.addEventListener("submit", function (event) {
     let element = document.getElementById("output");
     element.textContent = `User Info Is  \n
     ${firstName}`
-})
+});
 
 
 
