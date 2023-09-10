@@ -12,3 +12,18 @@ console.log(month)
 
 potato = birthdate.match(/\d{4}/)
 console.log(potato[0])
+
+
+const testUser =
+{
+    "firstName": "Zason",
+    "lastName": "Zlock",
+    "birthdate": "1878-11-12",
+    "birthTime": "21:00",
+    "latitude": "45.5235",
+    "longitude": "-122.6762",
+    "timezone": 5,
+    "year": "1878",
+    "month": "11",
+    "date": "12"
+}
