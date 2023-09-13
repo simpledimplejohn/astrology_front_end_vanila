@@ -3,7 +3,8 @@
 console.log("scripts connects")
 const form = document.getElementById("userForm");
 
-form.addEventListener("submit", function (event) {
+// Inside your event listener, mark it as async
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
@@ -20,12 +21,20 @@ form.addEventListener("submit", function (event) {
     const hour = parseInt(timematch[1],10);
     const latitude = parseInt(latString);
     const longitude = parseInt(longString);
-    console.log("matches array",matches)
-    console.log("date",date)
+
+    console.log("firstName",firstName)
+    console.log("birthTime",birthTime)
+    console.log("timematch",timematch)
+    console.log("hour",hour)
+    // console.log("date",date)
     const newUser = new User()
 
     newUser.setUserData(firstName, lastName, birthdate, birthTime, latitude,longitude, timezone, year, month, date, hour)
-    console.log(newUser);
+    console.log("newUser",newUser);
+
+    const data = await sendToBackEnd(newUser);
+///////////////////////////////this is where the break is, data is getting sent and run but this does not return the data ////////////////
+    console.log("returned data: ",data)
 
     let element = document.getElementById("output");
     
@@ -33,7 +42,7 @@ form.addEventListener("submit", function (event) {
     First Name: ${newUser.firstName}<br>
     Last Name: ${newUser.lastName}<br>
     Birthdate: ${newUser.birthdate}<br>
-    Birth Time: ${newUser.birthTime}<br>
+    Birth Time: ${hour}<br>
     Latitude: ${newUser.latitude}<br>
     Longitude: ${newUser.longitude}<br>
     timezone: ${newUser.timezone}<br>
@@ -49,6 +58,28 @@ form.addEventListener("submit", function (event) {
 
 
 
+const sendToBackEnd = async (newUser) => {
+    try {
+        const response = await fetch('http://localhost:3000/addUserChart', {
+            method: 'POST',
+            mode: "cors",
+            headers: {
+                'Content-Type': 'application/json',
+                
+            },
+            body: JSON.stringify(newUser), // Send the newUser object as JSON
+        });
 
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Data from backend worked!:', data);
+            return data
+        } else {
+            console.error('Error sending data to the backend.');
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+};
 
 
