@@ -48,4 +48,4 @@ This is a basic html setup for the Astrology Interface website that will later b
 {name: 'ayanamsa', value: 21.051143277131917}
 debug
 : 
-{observation_point: 'topocentric'
+{observation_point: 'topocentric'}
