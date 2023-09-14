@@ -1,3 +1,17 @@
+const zodiacSigns = [
+    "Aries",
+    "Taurus",
+    "Gemini",
+    "Cancer",
+    "Leo",
+    "Virgo",
+    "Libra",
+    "Scorpio",
+    "Sagittarius",
+    "Capricorn",
+    "Aquarius",
+    "Pisces"
+  ];
 
 
 console.log("scripts connects")
@@ -32,14 +46,33 @@ form.addEventListener("submit", async function (event) {
     newUser.setUserData(firstName, lastName, birthdate, birthTime, latitude,longitude, timezone, year, month, date, hour)
     console.log("newUser",newUser);
 
-    const data = await sendToBackEnd(newUser);
-///////////////////////////////this is where the break is, data is getting sent and run but this does not return the data ////////////////
+    const data = await sendToBackEnd(newUser); // this does not work
+    
+
     console.log("returned data: ",data)
+    console.log("array[1] ",data.chart.output[1].Ascendant.current_sign)
+    console.log("arrya[0] ",data.chart.output[0])
 
     let element = document.getElementById("output");
+    let chartelement = document.getElementById("chart")
     
+    let chartinfo = `
+    Ascendent: ${zodiacSigns[data.chart.output[1].Ascendant.current_sign]}<br>
+    Sun: ${zodiacSigns[data.chart.output[1].Sun.current_sign]}<br>
+    Moon: ${zodiacSigns[data.chart.output[1].Moon.current_sign]}<br>
+    Mars: ${zodiacSigns[data.chart.output[1].Mars.current_sign]}<br>
+    Mercury: ${zodiacSigns[data.chart.output[1].Mercury.current_sign]}<br>
+    Jupiter: ${zodiacSigns[data.chart.output[1].Jupiter.current_sign]}<br>
+    Venus: ${zodiacSigns[data.chart.output[1].Venus.current_sign]}<br>
+    Saturn: ${zodiacSigns[data.chart.output[1].Saturn.current_sign]}<br>
+    Uranus: ${zodiacSigns[data.chart.output[1].Uranus.current_sign]}<br>
+    Neptune: ${zodiacSigns[data.chart.output[1].Neptune.current_sign]}<br>
+    Pluto: ${zodiacSigns[data.chart.output[1].Pluto.current_sign]}<br>
+    `
+
+
     let userInfo = `User Info Is:<br>
-    First Name: ${newUser.firstName}<br>
+    First Name: ${data.user.fname}<br>
     Last Name: ${newUser.lastName}<br>
     Birthdate: ${newUser.birthdate}<br>
     Birth Time: ${hour}<br>
@@ -54,13 +87,15 @@ form.addEventListener("submit", async function (event) {
     
     // Set the "output" element's text content
     element.innerHTML = userInfo;
+    chartelement.innerHTML = chartinfo
 });
 
 
 
 const sendToBackEnd = async (newUser) => {
+    // console.log("hit send to back end") // this is never being hit, why?
     try {
-        const response = await fetch('http://localhost:3000/addUserChart', {
+        const response = await fetch('http://localhost:3000/addUserChart', {   
             method: 'POST',
             mode: "cors",
             headers: {
