@@ -1,18 +1,9 @@
 /* Custom CSS based on your provided styles */
-:root {
-    font-family:'Courier New', Courier, monospace;
-    --bs-body-font-family: Arial, Helvetica, sans-serif;
-    font-family: 'VT323', monospace;
-    color: #fa5aba;
-}
-
 
 body {
-    font-family:'Courier New', Courier, monospace;
+    font-family: "Montserrat";
     background-color: white;
     /* Windows 95 desktop background color */
-    background-image: url('patterns/042.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; /* This will repeat the image both horizontally and vertically */
     color: rgb(0, 0, 0);
     
     padding: 20px;
@@ -23,50 +14,31 @@ body {
     max-width: 800px;
     background-color: #ffffff;
     /* Windows 95 card background color */
-    border: 4px solid #000;
+    border: 1px solid #000;
     border-radius: 5px;
     padding: 20px;
     margin: 0 auto;
     box-shadow: 5px 10px;
     margin-top: 20px;
-    background-image: url('patterns/028.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; 
+   
 }
-#one {
-    background-image: url('patterns/027.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; 
-}
-#two {
-    background-image: url('patterns/026.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; 
-}#three {
-    background-image: url('patterns/025.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; 
-}#four {
-    background-image: url('patterns/020.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; 
-}#five {
-    background-image: url('patterns/011.png'); /* Replace 'path/to/100.png' with the actual file path */
-    background-repeat: repeat; 
-}
+
 h1 {
-    color: #fa5aba;
-    font-family: 'VT323', monospace;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    
+    color: #fa5aba;
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
 h4 {
     font-family: 'Roboto', sans-serif;
     color: #fa5aba;
-    text-align:left;
+    text-align: center;
     font-size: 18px;
     margin-bottom: 20px;
-} 
-
+}
 
 .form-group label {
     color: #000;
